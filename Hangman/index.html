@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .float-right {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    #hangmanPic {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    #keyboard button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: #17a2b8;
+    }
+    .btn:hover {
+      background-color: #138496;
+    }
+    .chosen {
+      background-color: #87c6d9; /* Light blue color for chosen letters */
+      cursor: not-allowed; /* Change cursor to not-allowed when letter is already guessed */
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Hangman</h1>
+  <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+  <div class="text-center">
+    <img id='hangmanPic' src="./hangman_images/0.png" alt="">
+    <p>Guess the Programming Language:</p>
+    <p id="wordSpotlight">The word to be guessed goes here</p>
+    <div id="keyboard"></div>
+    <button class="btn" onClick="reset()">Reset</button>
+  </div> 
+</div>
+
+<script src='./js/hangman.js'></script>
+</body>
+</html>
